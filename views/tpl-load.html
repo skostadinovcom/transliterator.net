@@ -1,0 +1,58 @@
+{include file="overview_head.html"}
+	<section id="main-content">
+		<div class="col-md-6 input">
+			<div class="options">
+				<form action="{SITE_URL}models/includes/upload.php" method="post" enctype="multipart/form-data">
+					<a class="big-active waves-effect">
+						<span>
+							<i class="fa fa-upload"></i> Качи файл
+						</span>
+						<input type="file" class="up" onchange="this.form.submit()" name="fileToUpload" id="fileToUpload" accept=".txt"/>
+					</a>
+				</form>
+			</div>
+			<div class="inputs">
+				<textarea placeholder="Въведете текст на кирилица който да бъде транслитериран" id="input-textarea" class="load-txt"></textarea>
+			</div>
+		</div>
+		<div class="counters">
+			<div class="col-md-6 left">
+				<div class="counter waves-effect">
+					Символи: <i id="input-count-symbols">0</i>
+				</div>
+				<div class="counter waves-effect">
+					Думи: <i id="input-count-words">0</i>
+				</div>
+			</div>
+			<div class="col-md-6 right">
+				<div class="counter waves-effect" id="output-count">
+					Думи: <i id="output-count-words">0</i>
+				</div>
+				<div class="counter waves-effect">
+					Символи: <i id="output-count-symbols">0</i>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 output">
+			<div class="options">
+				<form method="POST">
+					<button type="submit" class="big-active waves-effect float-left-btn" name="fileToDownload">
+						<i class="fa fa-download"></i> Свали текста
+					</button>
+					<textarea id="output-textarea-get" name="outputPhp" style="display: none;"></textarea>
+				</form>
+				<button class="big-active waves-effect" id="copy-btn" data-clipboard-action="copy" data-clipboard-target="#output-textarea">
+					<i class="fa fa-copy"></i> Копирай текста
+				</button>
+				<div class="min-buttons">
+					<a href="javascript:void(0);" class="min-active" id="upper-case-btn">AA</a>
+					<a href="javascript:void(0);" class="min-active" id="lower-case-btn">aa</a>
+					<a href="javascript:void(0);" class="min-active" id="firstl-case-btn">Aa</a>
+				</div>
+			</div>
+			<div class="inputs">
+				<textarea readonly="" id="output-textarea"></textarea>
+			</div>
+		</div>
+	</section>
+{include file="overview_footer.html"}
