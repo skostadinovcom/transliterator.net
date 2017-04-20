@@ -17,5 +17,3 @@ if (strlen($page) > 0) {
     include("models/index.php");
 	$tpl->parse("tpl-index");
 }
-
-?>
